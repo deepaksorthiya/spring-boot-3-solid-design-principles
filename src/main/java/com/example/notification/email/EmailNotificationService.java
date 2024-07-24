@@ -3,9 +3,9 @@ package com.example.notification.email;
 import com.example.notification.NotificationRequest;
 import com.example.notification.NotificationService;
 import com.example.notification.NotificationType;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class EmailNotificationService implements NotificationService {
 
     @Override

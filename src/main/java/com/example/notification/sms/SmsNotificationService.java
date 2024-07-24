@@ -3,9 +3,9 @@ package com.example.notification.sms;
 import com.example.notification.NotificationRequest;
 import com.example.notification.NotificationService;
 import com.example.notification.NotificationType;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class SmsNotificationService implements NotificationService {
 
     @Override

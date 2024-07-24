@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 @SpringBootTest
@@ -74,6 +75,16 @@ class NotificationManagerTest {
         notificationManager.sendNotification(request);
 
         verify(pushNotificationService, times(1)).sendNotification(request);
+    }
+
+    @Test
+    public void testSendNotification_InvalidRequest() {
+        String message = "Test message";
+        String recipient = "invalid";
+
+        NotificationRequest request = new NotificationRequest(message, recipient, null);
+
+        assertThrows(IllegalArgumentException.class, () -> notificationManager.sendNotification(request));
     }
 }
 

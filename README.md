@@ -1,7 +1,7 @@
 # Getting Started
 ## Requirements:
 ```
-Spring Boot: 3.2.5
+Spring Boot: 3.3.2
 Maven: 3.9+
 Java: 17
 ```
@@ -25,6 +25,28 @@ cd spring-boot-3-solid-design-principles
 
 ```bash
 ./mvnw spring-boot:run
+```
+
+### Sample API Request:
+```
+POST http://localhost:8080/send-notification
+{
+    "message": "hello",
+    "recipient": "9111111111",
+    "type": "SMS"
+}
+
+{
+    "message": "hello",
+    "recipient": "ssffsf@abc.com",
+    "type": "EMAIL"
+}
+
+{
+    "message": "hello",
+    "recipient": "mobile push",
+    "type": "PUSH"
+}
 ```
 
 ### Reference Documentation

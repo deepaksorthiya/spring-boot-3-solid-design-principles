@@ -17,7 +17,9 @@ public class NotificationManager {
         for (NotificationService notificationService : notificationServices) {
             if (notificationService.support(notificationRequest.type())) {
                 notificationService.sendNotification(notificationRequest);
+                return;
             }
         }
+        throw new IllegalArgumentException("Notification request not supported");
     }
 }
